@@ -1,0 +1,18 @@
+<div class="landing-page-container">
+    <div 
+        (mouseenter)="runPasswordAnimation($event)"
+        (mouseleave)="resetPasswordAnimation($event)"
+        class="encrypt-container"
+        data-label="encrypt"
+    >
+        <p class="encrypt-placeholder placeholder">ENCRYPT</p>
+    </div>
+    <div
+        (mouseenter)="runPasswordAnimation($event)"
+        (mouseleave)="resetPasswordAnimation($event)"
+        class="decrypt-container"
+        data-label="decrypt"
+    >
+        <p class="decrupt-placeholder placeholder">DECRYPT</p>
+    </div>
+</div>

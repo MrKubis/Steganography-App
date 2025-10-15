@@ -4,20 +4,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: 0;
-
-    &::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-color: #151515;
-        opacity: 1;
-        background: radial-gradient(circle, transparent 20%, #151515 20%, #151515 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #151515 20%, #151515 80%, transparent 80%, transparent) 30px 30px, linear-gradient(#ffffff 2.4000000000000004px, transparent 2.4000000000000004px) 0 -1.2000000000000002px, linear-gradient(90deg, #ffffff 2.4000000000000004px, #151515 2.4000000000000004px) -1.2000000000000002px 0;
-        background-size: 60px 60px, 60px 60px, 30px 30px, 30px 30px;
-        z-index: 5;
-    }
 
     .encrypt-container, .decrypt-container {
         display: flex;
@@ -25,7 +11,7 @@
         align-items: center;
         height: 100%;
         width: 100%;
-        z-index: 10;
+        z-index: 0;
         cursor: pointer;
         position: relative;
         transition: width 0.5s ease;
@@ -40,18 +26,18 @@
                 height: 100%;
                 background-color: #414141;
                 opacity: .5;
-                z-index: 15;
+                z-index: 5;
             }
         }
 
         .placeholder {
-            font-family: "BBH Sans Bartle", sans-serif;
+            font-family: "BBH Sans Bartle", "Arial", sans-serif;
             font-weight: 400;
             font-style: normal;
             font-size: 4rem;
             opacity: 1;
             color: white;
-            z-index: 20;
+            z-index: 10;
             text-shadow: 0 0 20px rgb(0, 0, 0);
         }
     }

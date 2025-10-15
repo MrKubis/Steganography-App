@@ -4,6 +4,7 @@
         (mouseleave)="resetPasswordAnimation($event)"
         class="encrypt-container"
         data-label="encrypt"
+        [routerLink]="['upload', 'encrypt']"
     >
         <p class="encrypt-placeholder placeholder">ENCRYPT</p>
     </div>
@@ -12,6 +13,7 @@
         (mouseleave)="resetPasswordAnimation($event)"
         class="decrypt-container"
         data-label="decrypt"
+        [routerLink]="['upload', 'decrypt']"
     >
         <p class="decrupt-placeholder placeholder">DECRYPT</p>
     </div>

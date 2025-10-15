@@ -1,4 +1,10 @@
 .container {
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #151515;
+    opacity: 1;
+    background: radial-gradient(circle, transparent 20%, #151515 20%, #151515 80%, transparent 80%, transparent), radial-gradient(circle, transparent 20%, #151515 20%, #151515 80%, transparent 80%, transparent) 30px 30px, linear-gradient(#ffffff 2.4000000000000004px, transparent 2.4000000000000004px) 0 -1.2000000000000002px, linear-gradient(90deg, #ffffff 2.4000000000000004px, #151515 2.4000000000000004px) -1.2000000000000002px 0;
+    background-size: 60px 60px, 60px 60px, 30px 30px, 30px 30px;
 }

@@ -10,14 +10,11 @@ using System.Collections;
 using System.Threading.Channels;
 namespace test
 {
-    //TUTAJ CAŁY ALGORYTM
-
     internal class LSB
     {
         private LSBMessage _message;
         public LSBMessage Message { get { return _message; } set { _message = value; } }
         public LSB() { }
-
         public void EncryptImage(string input_path,string output_path,string message)
         {
             if (File.Exists(input_path))
@@ -58,48 +55,32 @@ namespace test
                                 jumpCounter = 0;
                             }
                         }
-
-                        //JPG
-
-                        bmp.SetPixel(x, y, Color.FromArgb(r, g, b));
-                        //PNG
-                        //bmp.SetPixel(x, y, Color.FromArgb(pixel.A,r,g,b));
+                        bmp.SetPixel(x, y, Color.FromArgb(pixel.A,r,g,b));
                     }
                 }
-                Console.WriteLine("Encoding statistics:");
-                Console.WriteLine("Image length: " + bmp.Height * bmp.Width);
-                Console.WriteLine("Maximum message length (bytes): " + bmp.Height * bmp.Width / 8);
-                Console.WriteLine("Jump length: " + jump);
-                Console.Write("Message: ");
-                Console.WriteLine(Message.ToString());
-                Console.WriteLine("Raw message length: " + (i - 64 + 1) / 8);
-                Console.WriteLine("Bits encoded: " + i);
                 bmp.Save(output_path);
             }
         }
-        public string DecryptImage(string input_path)
+        public BitArray DecryptImage(string input_path)
         {
             bool[] lengthArray = new bool[64];
             int i = 0;
             Bitmap bmp = new Bitmap(input_path);
-
+            List<bool> bits_list = new List<bool>();
             string result = "";
+
             //UWAGA - ZAKŁADAMY ZE ZDJĘCIE MA MINIMUM 64 PIXELI SZEROKOSCI
             //PIERWSZE 64 PIXELE - ZAPIS SEGMENTU DLUGOSCI
 
-                while (i < 64)
-                {
-                    lengthArray[i] = (readLastBit(bmp.GetPixel(i, 0).R));
-                    result += readLastBit(bmp.GetPixel(i, 0).R) ? "1" : "0";
-                    i++;
-                }
+            while (i < 64)
+            {
+                lengthArray[i] = (readLastBit(bmp.GetPixel(i, 0).R));
+                i++;
+            }
             long rawmessagelength = readBitsToLong(lengthArray);
             //TUTAJ RAZY 8 BO BITY
             long jump = CalculateJump(bmp.Width * bmp.Height, rawmessagelength * 8);
             long jumpCounter = 0;
-            Console.WriteLine("Message: " + result);
-            Console.WriteLine("Raw message length: " + rawmessagelength);
-
             for (int x = 64; x < bmp.Width; x++)
                 {
                 if (jumpCounter < jump)
@@ -117,23 +98,21 @@ namespace test
             {
                 for (int x = 0; x < bmp.Width; x++)
                 {
-                        if (jumpCounter < jump)
-                        {
-                            jumpCounter++;
-                            i++;
-                        }
-                        else
-                        {
-                            result += readLastBit(bmp.GetPixel(x, y).R) ? "1" : "0";
-                            jumpCounter = 0;
-                            i++;
-                        }               
+                    if (jumpCounter < jump)
+                    {
+                        jumpCounter++;
+                        i++;
+                    }
+                    else
+                    {
+                        result += readLastBit(bmp.GetPixel(x, y).R) ? "1" : "0";
+                        bits_list.Add(readLastBit(bmp.GetPixel(x, y).R));
+                        jumpCounter = 0;
+                        i++;
+                    }
                 }
             }
-            Console.WriteLine("Decoding statistics:");
-            Console.WriteLine("Jump length: " + jump);
-            Console.WriteLine("Message: " + result);
-            return "";
+            return new BitArray(bits_list.ToArray());
         }
         private byte SetLastBit(byte value, bool bit)
         {
@@ -147,7 +126,6 @@ namespace test
         private bool readLastBit(byte b)
         {
             return b % 2 != 0;
-
         }
         private long readBitsToLong(bool[] bits)
         {
@@ -162,6 +140,30 @@ namespace test
             }
             return result;
         }
-
+        public static byte[] ToByteArray(BitArray bits)
+        {
+            byte[] reversed_bytes = new byte[(bits.Length - 1) / 8 + 1];
+            bits.CopyTo(reversed_bytes, 0);
+            byte[] result = new byte[reversed_bytes.Length];
+            if (BitConverter.IsLittleEndian)
+            {
+                for (int i = 0; i < reversed_bytes.Length;i++)
+                {
+                    result[i] = ReverseByte(reversed_bytes[i]);   
+                }
+            }
+            return result;
+        }
+        public static byte ReverseByte(byte b)
+        {
+            byte result = 0;
+            for (int i = 0; i < 8; i++)
+            {
+                result <<= 1;
+                result |= (byte)(b & 1);
+                b >>= 1;
+            }
+            return result;
+        }
     }
 }

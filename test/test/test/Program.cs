@@ -3,12 +3,16 @@ using System.Collections;
 using System.Text;
 using System.Linq;
 using test;
+using System.ComponentModel;
 
 //MESSAGE PART
 
 string message = "Siemanko!!!";
-string input = "test.jpg";
-string output = "result.jpg";
+string input = "test.png";
+string output = "result.png";
 LSB lsb = new LSB();
-lsb.EncryptImage(input, output,message);
-lsb.DecryptImage(output);
+//lsb.EncryptImage(input, output,message);
+BitArray bits = lsb.DecryptImage(output);
+byte[] bytes = LSB.ToByteArray(bits);
+string text = Encoding.UTF8.GetString(bytes);
+Console.WriteLine(text);

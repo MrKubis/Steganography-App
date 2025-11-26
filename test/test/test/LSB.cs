@@ -10,19 +10,17 @@ using System.Collections;
 using System.Threading.Channels;
 namespace test
 {
-    internal class LSB
+    internal static class LSB
     {
-        private LSBMessage _message;
-        public LSBMessage Message { get { return _message; } set { _message = value; } }
-        public LSB() { }
-        public void EncryptImage(string input_path,string output_path,string message)
+        private static LSBMessage _message;
+        private static LSBMessage Message { get { return _message; } set { _message = value; } }
+        public static void EncryptPNGImage(string input_path,string output_path,string message)
         {
             if (File.Exists(input_path))
             {
                 int i = 0;
                 Message = new LSBMessage(message);
                 Bitmap bmp = new Bitmap(input_path);
-
                 long jump = CalculateJump(bmp.Width * bmp.Height, Message.Bits.Count - 64);
                 long jumpCounter = 0;
                 for (int y=0; y < bmp.Height; y++)
@@ -58,10 +56,11 @@ namespace test
                         bmp.SetPixel(x, y, Color.FromArgb(pixel.A,r,g,b));
                     }
                 }
+                Console.WriteLine("printed");
                 bmp.Save(output_path);
             }
         }
-        public BitArray DecryptImage(string input_path)
+        public static BitArray DecryptPNGImage(string input_path)
         {
             bool[] lengthArray = new bool[64];
             int i = 0;
@@ -114,20 +113,21 @@ namespace test
             }
             return new BitArray(bits_list.ToArray());
         }
-        private byte SetLastBit(byte value, bool bit)
+
+        private static byte SetLastBit(byte value, bool bit)
         {
             return (byte)((value & 0b_11111110) | (bit ? 1 : 0));
         }
-        private long CalculateJump(long pixelCount,long rawmessagelength)
+        private static long CalculateJump(long pixelCount,long rawmessagelength)
         {
             return (long)(pixelCount - 64)/(rawmessagelength +1);
         }
 
-        private bool readLastBit(byte b)
+        private static bool readLastBit(byte b)
         {
             return b % 2 != 0;
         }
-        private long readBitsToLong(bool[] bits)
+        private static long readBitsToLong(bool[] bits)
         {
             Array.Reverse(bits);
             long result = 0;

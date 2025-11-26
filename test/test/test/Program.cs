@@ -7,12 +7,15 @@ using System.ComponentModel;
 
 //MESSAGE PART
 
-string message = "Siemanko!!!";
-string input = "test.png";
+
+string message = "piwo";
+string input = "auto.png";
 string output = "result.png";
-LSB lsb = new LSB();
-//lsb.EncryptImage(input, output,message);
-BitArray bits = lsb.DecryptImage(output);
+/*
+LSB.EncryptPNGImage(input, output,message);
+*/
+
+BitArray bits = LSB.DecryptPNGImage(output);
 byte[] bytes = LSB.ToByteArray(bits);
 string text = Encoding.UTF8.GetString(bytes);
 Console.WriteLine(text);

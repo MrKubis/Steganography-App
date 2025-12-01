@@ -5,11 +5,13 @@ namespace DCTClass;
 
 public class ClassDCT
 {
-    private static int UParam = 4;
-    private static int VParam = 3;
+    private static int UParam = 4;  //Wyjaśnienie w funkcji HideBit, dlaczego wybieramy te bloki
+    private static int VParam = 3;  //do ukrycia bitów
     private static string Terminator = "<END>";
-    private static double QScale = 30.0;
+    private static double QScale = 30.0; //współczynnik skalujący do kwantyzacji
+                                         //wyjaśnienie również w funkcji HideBit
 
+    //Funkcja zaminiajaca wiadomość do ukrycia na tablicę bitów
     private static List<int> StringToBits(string message)
     {
         List<int> bits = new List<int>();
@@ -24,6 +26,7 @@ public class ClassDCT
         return bits;
     }
 
+    //Funkcja sprawdzająca czy w tablicy bajtów znajduje się terminator
     private static bool CheckForTerminator(List<byte> bytes)
     {
         byte[] termBytes = Encoding.UTF8.GetBytes(Terminator);
@@ -36,7 +39,8 @@ public class ClassDCT
         }
         return true;
     }
-
+    
+    //Funkcja pobierająca bloki 8x8 pikseli z obrazu i konwertująca je do YCbCr
     private static void GetBlocks(Bitmap bmp, int startX, int startY, double[,] blkY, double[,] blkCr, double[,] blkCb)
     {
         for (int y = 0; y < 8; y++)
@@ -44,7 +48,6 @@ public class ClassDCT
             for (int x = 0; x < 8; x++)
             {
                 if (startX + x >= bmp.Width || startY + y >= bmp.Height) continue;
-                
                 Color c = bmp.GetPixel(startX + x, startY + y);
                 blkY[x, y] = 0.299 * c.R + 0.587 * c.G + 0.114 * c.B;
                 blkCb[x, y] = 128 - 0.168736 * c.R - 0.331264 * c.G + 0.5 * c.B;
@@ -53,6 +56,7 @@ public class ClassDCT
         }
     }
 
+    //Funkcja ustawiająca bloki 8x8 pikseli w obrazie na podstawie wartości YCbCr ~ odwrotna do GetBlocks
     private static void SetBlocks(Bitmap bmp, int startX, int startY, double[,] blkY, double[,] blkCr, double[,] blkCb)
     {
         for (int x = 0; x < 8; x++)
@@ -60,24 +64,22 @@ public class ClassDCT
             for (int y = 0; y < 8; y++)
             {
                 if (startX + x >= bmp.Width || startY + y >= bmp.Height) continue;
-
                 double yValue = blkY[x, y];
                 double cbValue = blkCb[x, y];
                 double crValue = blkCr[x, y];
-
                 int r = (int)Math.Round(yValue + 1.402 * (crValue - 128));
                 int g = (int)Math.Round(yValue - 0.344136 * (cbValue - 128) - 0.714136 * (crValue - 128));
                 int b = (int)Math.Round(yValue + 1.772 * (cbValue - 128));
-                
                 r = Math.Max(0, Math.Min(255, r));
                 g = Math.Max(0, Math.Min(255, g));
                 b = Math.Max(0, Math.Min(255, b));
-
-                bmp.SetPixel(startX + x, startY + y, Color.FromArgb(r, g, b));
+                Color c = Color.FromArgb(r, g, b);
+                bmp.SetPixel(startX + x, startY + y, c);
             }
         }
     }
     
+    //Funkcja wykonująca dyskretną transformatę kosinusową (DCT) na bloku 8x8
     private static double[,] dct8x8(double[,] block)
     {
         double[,] output = new double[8, 8];
@@ -104,6 +106,7 @@ public class ClassDCT
         return output;
     }
     
+    //Funkcja wykonująca odwrotną dyskretną transformatę kosinusową (IDCT) na bloku 8x8
     private static double[,] idct8x8(double[,] block)
     {
         double[,] output = new double[8, 8];
@@ -127,19 +130,31 @@ public class ClassDCT
         return output;
     }
     
+    //Funkcja ukrywająca pojedynczy bit w wybranym współczynniku DCT
+    //Tutaj używamy współczynnika (4,3) do ukrywania bitów
+    //Stosowanie wartości współczynnika o średniej częstotliwości pomaga zminimalizować widoczność zmian w obrazie
+    //Wykonujemy kwantyzację wartości współczynnika, a następnie modyfikujemy jego parzystość, aby ukryć bit
+    //Dzięki temu zmiany w obrazie przetrwają kompresję JPEG
     private static void HideBit(double [,] dctBlock, int bit)
     {
         double val = dctBlock[UParam, VParam];
         int quantized = (int)Math.Round(val / QScale);
         if (Math.Abs(quantized) % 2 != bit)
         {
-            if (quantized >= 0) quantized++;
-            else quantized--;
+            if (quantized >= 0)
+            {
+                quantized++;
+            }
+            else 
+            {
+                quantized--;
+            }
         }
 
         dctBlock[UParam, VParam] = quantized * QScale;
     }
     
+    //Funkcja odczytująca pojedynczy ukryty bit z wybranego współczynnika DCT
     private static int GetHiddenBit(double [,] dctBlock)
     {
         double val = dctBlock[UParam, VParam];
@@ -147,20 +162,18 @@ public class ClassDCT
         return Math.Abs(quantized) % 2;
     }
     
+    //Główna funkcja szyfrująca wiadomość w obrazie
     public static Image Encrypt(Image input, string message)
     {
         Bitmap bmpIn = new Bitmap(input);
-        Bitmap bmpOut = new Bitmap(bmpIn); 
-
-        message += Terminator;
+        Bitmap bmpOut = new Bitmap(bmpIn); //kopiujemy obraz wejściowy
+        message += Terminator;  //dodajemy terminator na końcu wiadomości
         List<int> bits = StringToBits(message);
         int bitIndex = 0;
         int bitMessageLength = bits.Count;
-        
         int width = bmpIn.Width - (bmpIn.Width % 8);
         int height = bmpIn.Height - (bmpIn.Height % 8);
-        
-        double[,] blockY = new double[8, 8];
+        double[,] blockY = new double[8, 8];        //Tablice na bloki Y, Cb, Cr
         double[,] blockCb = new double[8, 8];
         double[,] blockCr = new double[8, 8];
 
@@ -194,6 +207,7 @@ public class ClassDCT
         return (Image)bmpOut;
     }
 
+    //Główna funkcja odszyfrowująca wiadomość z obrazu
     public static string Decrypt(Image input)
     {
         Bitmap bmpIn = new Bitmap(input);

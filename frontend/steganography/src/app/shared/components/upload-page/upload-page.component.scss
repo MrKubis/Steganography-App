@@ -1,3 +1,5 @@
+@use '../../../../variables' as *;
+
 .upload-page-container {
     height: 100%;
     width: 100%;
@@ -8,7 +10,7 @@
     .upload-container {
         width: 60vw;
         height: 85vh;
-        background-color: #000000b2;
+        background-color: $upload-container-bg;
         backdrop-filter: blur(8px);
         border: solid 2px gray;
         border-radius: 12px;

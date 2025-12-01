@@ -1,3 +1,5 @@
+@use './_variables' as *;
+@use 'sass:color';
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
@@ -12,4 +14,36 @@ html, body {
     font-family: "DM Sans", "Arial",  sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+
+    button {
+        background-color: $background-color;
+        padding: .5rem 1rem;
+        color: white;
+        font-family: inherit;
+        font-size: large;
+        border: solid 2px gray;
+        border-radius: 12px;
+        width: fit-content;
+
+        &:hover {
+            cursor: pointer;
+            background-color: color.adjust($background-color, $lightness: 3%);
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: .5;
+        }
+    }
+
+    input {
+        font-family: inherit;
+        background-color: $background-color;
+        border: solid 2px gray;
+        border-radius: 6px;
+        padding: .5rem 1rem;
+        color: white;
+        font-size: medium;
+        outline: none;
+    }
 }

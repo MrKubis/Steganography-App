@@ -9,11 +9,10 @@ using System.ComponentModel;
 
 
 string message = "piwo";
-string input = "auto.png";
+string input = "test.png";
 string output = "result.png";
-/*
+
 LSB.EncryptPNGImage(input, output,message);
-*/
 
 BitArray bits = LSB.DecryptPNGImage(output);
 byte[] bytes = LSB.ToByteArray(bits);

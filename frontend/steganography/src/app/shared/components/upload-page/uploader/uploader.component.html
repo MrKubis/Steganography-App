@@ -29,14 +29,16 @@
             id="file-upload"
         />
 
-        <input 
-            type="text"
-            name="message"
-            id="message"
-            class="message-input"
-            placeholder="Enter the text to be encrypted..."
-            [(ngModel)]="message"
-        />
+        @if (isMessageRequired) {
+            <input 
+                type="text"
+                name="message"
+                id="message"
+                class="message-input"
+                placeholder="Enter the text to be encrypted..."
+                [(ngModel)]="message"
+            />
+        }
     </div>
     <button 
         class="upload-btn"

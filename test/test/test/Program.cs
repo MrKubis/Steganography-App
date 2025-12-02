@@ -8,14 +8,28 @@ using System.ComponentModel;
 //MESSAGE PART
 
 
-string message = "piwo";
-string input = "auto.png";
+string message = "jaja";
+string input = "test.png";
+
 string output = "result.png";
-/*
 LSB.EncryptPNGImage(input, output,message);
-*/
 
 BitArray bits = LSB.DecryptPNGImage(output);
 byte[] bytes = LSB.ToByteArray(bits);
 string text = Encoding.UTF8.GetString(bytes);
 Console.WriteLine(text);
+
+
+/*
+input = "nyan-cat.gif";
+output = "nyan-cat-result.gif";
+
+LSB.EncryptGIFImage(input,output, message);
+
+Console.WriteLine("DECRYPTING...");
+
+BitArray gifbits = LSB.DecryptGIFImage(output);
+byte[] gifbytes = LSB.ToByteArray(gifbits);
+string giftext = Encoding.UTF8.GetString(gifbytes);
+Console.WriteLine(giftext);
+*/

@@ -16,6 +16,7 @@ namespace test
             byte[] message_bytes = Encoding.UTF8.GetBytes(message);
             long message_length = message_bytes.Length;
             byte[] length_segment_bytes = BitConverter.GetBytes(message_length);
+            BitArray length_segments_bits = new BitArray(length_segment_bytes);
             byte[] fullmessage = new byte[length_segment_bytes.Length + message_bytes.Length];
             if (BitConverter.IsLittleEndian)
             {
@@ -47,8 +48,8 @@ namespace test
         {
             string result = "";
             foreach (bool bit in Bits)
-            {
-                result += bit ? "1" : 0;
+            {          
+                result += bit ? "1" : "0";
             }
             return result;
         }

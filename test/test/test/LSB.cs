@@ -5,9 +5,10 @@ using System.IO.Compression;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;
 using System.Collections;
 using System.Threading.Channels;
+using System.Runtime.InteropServices;
+using ImageMagick;
 namespace test
 {
     internal static class LSB
@@ -20,62 +21,96 @@ namespace test
             {
                 int i = 0;
                 Message = new LSBMessage(message);
-                Bitmap bmp = new Bitmap(input_path);
+                var bmp = new MagickImage(input_path);
+
                 long jump = CalculateJump(bmp.Width * bmp.Height, Message.Bits.Count - 64);
                 long jumpCounter = 0;
-                for (int y=0; y < bmp.Height; y++)
+                var pixels = bmp.GetPixelsUnsafe();
+                while (i < 64)
+                {
+                    var pixel = pixels.GetPixel(i, 0);
+                    var r = pixel.GetChannel(0);
+                    r = SetLastBit(r, Message.Bits[i]);
+
+                    pixel.SetChannel(0, r);
+                    Console.Write(Message.Bits[i] ? "1" : "0");
+                    i++;
+                    pixels.SetPixel(pixel);
+                }
+                Console.Write("|");
+                for (int x = 64; x < bmp.Width; x++)
+                {
+                    var pixel = pixels.GetPixel(x, 0);
+                    var r = pixel.GetChannel(0);
+                    if (i <= Message.Bits.Count)
+                    {
+                        if (jumpCounter < jump)
+                        {
+                            jumpCounter++;
+                        }
+                        else
+                        {
+                            r = SetLastBit(r, Message.Bits[i]);
+                            Console.Write(Message.Bits[i] ? "1" : "0");
+
+                            i++;
+                            jumpCounter = 0;
+                        }
+                    }
+                    pixel.SetChannel(0, r);
+                    pixels.SetPixel(pixel);
+                }
+                for (int y=1; y < bmp.Height; y++)
                 {
                     for(int x=0; x < bmp.Width; x++)
                     {
-                        Color pixel = bmp.GetPixel(x, y);
-                        byte r = pixel.R;
-                        byte g = pixel.G;
-                        byte b = pixel.B;
+                        var pixel = pixels.GetPixel(x, y);
+                        var r = pixel.GetChannel(0);
+                        if (jumpCounter < jump)
+                        {
+                            jumpCounter++;
 
-                        //Pierwsze 64 bity to segment długości - go k
-                        if(i < 64)
-                        {                      
-                            r = SetLastBit(r, Message.Bits[i]);
-                            BitArray bits = new BitArray(r);
-                            i++;
                         }
-
+                        
                         else if (i <= Message.Bits.Count)
                         {
-                            if(jumpCounter <jump)
-                            {
-                                jumpCounter++;
-                            }
-                            else
-                            {
-                                r = SetLastBit(r, Message.Bits[i]);
-                                i++;
-                                jumpCounter = 0;
-                            }
+                            r = SetLastBit(r, Message.Bits[i]);
+
+                            Console.Write(Message.Bits[i] ? "1" : "0");
+
+                            i++;
+                            jumpCounter = 0;
+
                         }
-                        bmp.SetPixel(x, y, Color.FromArgb(pixel.A,r,g,b));
+                        pixel.SetChannel(0, r);
+                        pixels.SetPixel(pixel);
                     }
                 }
+                bmp.Write(output_path);
                 Console.WriteLine("printed");
-                bmp.Save(output_path);
             }
         }
         public static BitArray DecryptPNGImage(string input_path)
         {
             bool[] lengthArray = new bool[64];
             int i = 0;
-            Bitmap bmp = new Bitmap(input_path);
+            var bmp = new MagickImage(input_path);
             List<bool> bits_list = new List<bool>();
-            string result = "";
 
             //UWAGA - ZAKŁADAMY ZE ZDJĘCIE MA MINIMUM 64 PIXELI SZEROKOSCI
             //PIERWSZE 64 PIXELE - ZAPIS SEGMENTU DLUGOSCI
 
+            var pixels = bmp.GetPixels();
+
             while (i < 64)
             {
-                lengthArray[i] = (readLastBit(bmp.GetPixel(i, 0).R));
+                var pixel = pixels.GetPixel(i, 0);
+                var r = pixel.GetChannel(0);
+                lengthArray[i] = readLastBit(r);
+                Console.Write(readLastBit(r) ? "1" : "0");
                 i++;
             }
+            Console.Write("|");
             long rawmessagelength = readBitsToLong(lengthArray);
             //TUTAJ RAZY 8 BO BITY
             long jump = CalculateJump(bmp.Width * bmp.Height, rawmessagelength * 8);
@@ -85,12 +120,14 @@ namespace test
                 if (jumpCounter < jump)
                 {
                     jumpCounter++;
-                    i++;
                 }
                 else
                 {
+                    var pixel = pixels.GetPixel(x, 0);
+                    var r = pixel.GetChannel(0);
+                    bits_list.Add(readLastBit(r));
+                    Console.Write(readLastBit(r) ? "1" : "0");
                     jumpCounter = 0;
-                    i++;
                 }
             }
             for (int y = 1; y < bmp.Height; y++)
@@ -100,12 +137,14 @@ namespace test
                     if (jumpCounter < jump)
                     {
                         jumpCounter++;
-                        i++;
                     }
                     else
                     {
-                        result += readLastBit(bmp.GetPixel(x, y).R) ? "1" : "0";
-                        bits_list.Add(readLastBit(bmp.GetPixel(x, y).R));
+                        var pixel = pixels.GetPixel(x, y);
+                        var r = pixel.GetChannel(0);
+                        bits_list.Add(readLastBit(r));
+                        Console.Write(readLastBit(r) ? "1" : "0");
+
                         jumpCounter = 0;
                         i++;
                     }

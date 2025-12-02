@@ -7,7 +7,6 @@ using System.ComponentModel;
 
 //MESSAGE PART
 
-
 string message = "piwo";
 string input = "test.png";
 string output = "result.png";

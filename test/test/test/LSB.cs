@@ -15,143 +15,88 @@ namespace test
     {
         private static LSBMessage _message;
         private static LSBMessage Message { get { return _message; } set { _message = value; } }
-        public static void EncryptPNGImage(string input_path,string output_path,string message)
-        {
-            if (File.Exists(input_path))
-            {
-                int i = 0;
-                Message = new LSBMessage(message);
-                var bmp = new MagickImage(input_path);
 
-                long jump = CalculateJump(bmp.Width * bmp.Height, Message.Bits.Count - 64);
-                long jumpCounter = 0;
+        public static void EncryptPNGImage(string input_path, string output_path, string message)
+        {
+            if (!File.Exists(input_path)) throw new FileNotFoundException();
+
+            Message = new LSBMessage(message);
+            using (var bmp = new MagickImage(input_path))
+            {
                 var pixels = bmp.GetPixelsUnsafe();
-                while (i < 64)
-                {
-                    var pixel = pixels.GetPixel(i, 0);
-                    var r = pixel.GetChannel(0);
-                    r = SetLastBit(r, Message.Bits[i]);
+                var mapping = bmp.HasAlpha ? PixelMapping.ARGB : PixelMapping.RGB;
 
-                    pixel.SetChannel(0, r);
+                var bytes = pixels.ToByteArray(mapping);
+
+                //Teraz format jest taki:
+                //bytes[0] = R1
+                //bytes[1] = G1
+                //bytes[2] = B1
+                //bytes[3] = A1
+                //bytes[4] = R2
+                //itd...
+
+                //Length Segment
+                for(int i =0; i < 64; i++)
+                {
+                    bytes[i] = SetLastBit(bytes[i], Message.Bits[i]);
                     Console.Write(Message.Bits[i] ? "1" : "0");
-                    i++;
-                    pixels.SetPixel(pixel);
                 }
-                Console.Write("|");
-                for (int x = 64; x < bmp.Width; x++)
+                long jump = CalculateJump(bmp.Width * bmp.Height, Message.Bits.Count - 64);
+                
+                for (int i = 0; i< Message.Bits.Count - 64; i++)
                 {
-                    var pixel = pixels.GetPixel(x, 0);
-                    var r = pixel.GetChannel(0);
-                    if (i <= Message.Bits.Count)
+                    int byteIndex = (int)(i * jump + 64);
+                    if (byteIndex < bytes.Length)
                     {
-                        if (jumpCounter < jump)
-                        {
-                            jumpCounter++;
-                        }
-                        else
-                        {
-                            r = SetLastBit(r, Message.Bits[i]);
-                            Console.Write(Message.Bits[i] ? "1" : "0");
-
-                            i++;
-                            jumpCounter = 0;
-                        }
-                    }
-                    pixel.SetChannel(0, r);
-                    pixels.SetPixel(pixel);
-                }
-                for (int y=1; y < bmp.Height; y++)
-                {
-                    for(int x=0; x < bmp.Width; x++)
-                    {
-                        var pixel = pixels.GetPixel(x, y);
-                        var r = pixel.GetChannel(0);
-                        if (jumpCounter < jump)
-                        {
-                            jumpCounter++;
-
-                        }
-                        
-                        else if (i <= Message.Bits.Count)
-                        {
-                            r = SetLastBit(r, Message.Bits[i]);
-
-                            Console.Write(Message.Bits[i] ? "1" : "0");
-
-                            i++;
-                            jumpCounter = 0;
-
-                        }
-                        pixel.SetChannel(0, r);
-                        pixels.SetPixel(pixel);
-                    }
-                }
-                bmp.Write(output_path);
-                Console.WriteLine("printed");
-            }
-        }
-        public static BitArray DecryptPNGImage(string input_path)
-        {
-            bool[] lengthArray = new bool[64];
-            int i = 0;
-            var bmp = new MagickImage(input_path);
-            List<bool> bits_list = new List<bool>();
-
-            //UWAGA - ZAKŁADAMY ZE ZDJĘCIE MA MINIMUM 64 PIXELI SZEROKOSCI
-            //PIERWSZE 64 PIXELE - ZAPIS SEGMENTU DLUGOSCI
-
-            var pixels = bmp.GetPixels();
-
-            while (i < 64)
-            {
-                var pixel = pixels.GetPixel(i, 0);
-                var r = pixel.GetChannel(0);
-                lengthArray[i] = readLastBit(r);
-                Console.Write(readLastBit(r) ? "1" : "0");
-                i++;
-            }
-            Console.Write("|");
-            long rawmessagelength = readBitsToLong(lengthArray);
-            //TUTAJ RAZY 8 BO BITY
-            long jump = CalculateJump(bmp.Width * bmp.Height, rawmessagelength * 8);
-            long jumpCounter = 0;
-            for (int x = 64; x < bmp.Width; x++)
-                {
-                if (jumpCounter < jump)
-                {
-                    jumpCounter++;
-                }
-                else
-                {
-                    var pixel = pixels.GetPixel(x, 0);
-                    var r = pixel.GetChannel(0);
-                    bits_list.Add(readLastBit(r));
-                    Console.Write(readLastBit(r) ? "1" : "0");
-                    jumpCounter = 0;
-                }
-            }
-            for (int y = 1; y < bmp.Height; y++)
-            {
-                for (int x = 0; x < bmp.Width; x++)
-                {
-                    if (jumpCounter < jump)
-                    {
-                        jumpCounter++;
+                        bytes[byteIndex] = SetLastBit(bytes[byteIndex], Message.Bits[i + 64]);
+                        Console.Write(Message.Bits[i + 64] ? "1" : "0");
                     }
                     else
                     {
-                        var pixel = pixels.GetPixel(x, y);
-                        var r = pixel.GetChannel(0);
-                        bits_list.Add(readLastBit(r));
-                        Console.Write(readLastBit(r) ? "1" : "0");
+                        break;
+                    }
+                }
 
-                        jumpCounter = 0;
-                        i++;
+                pixels.SetPixels(bytes);
+                bmp.Write(output_path);
+            }
+                
+
+        }
+        
+        public static BitArray DecryptPNGImage(string input_path)
+        {
+            if (!File.Exists(input_path)) throw new FileNotFoundException();
+            List<bool> bits_list = new List<bool>();
+
+            using (var bmp = new MagickImage(input_path))
+            {
+                var pixels = bmp.GetPixelsUnsafe();
+                var mapping = bmp.HasAlpha ? PixelMapping.ARGB : PixelMapping.RGB;
+                var bytes = pixels.ToByteArray(mapping);
+
+                //Length segment
+                bool[] lengthArray = new bool[64];
+                for (int i = 0; i < lengthArray.Length; i++)
+                {
+                    lengthArray[i] = readLastBit(bytes[i]);
+                }
+                long rawmessagelength = readBitsToLong(lengthArray) * 8;
+                long jump = CalculateJump((bmp.Width * bmp.Height), rawmessagelength);
+
+                for (int i = 0; i < rawmessagelength; i++)
+                {
+                    int byteIndex = (int)(i * jump + 64);
+                    if(byteIndex < bytes.Length)
+                    {
+                        bits_list.Add(readLastBit(bytes[byteIndex]));
                     }
                 }
             }
             return new BitArray(bits_list.ToArray());
-        }
+
+        }      
 
         private static byte SetLastBit(byte value, bool bit)
         {
@@ -159,7 +104,7 @@ namespace test
         }
         private static long CalculateJump(long pixelCount,long rawmessagelength)
         {
-            return (long)(pixelCount - 64)/(rawmessagelength +1);
+            return (pixelCount - 64)/(rawmessagelength +1);
         }
 
         private static bool readLastBit(byte b)

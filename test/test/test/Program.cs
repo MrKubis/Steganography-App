@@ -8,11 +8,15 @@ using System.ComponentModel;
 //MESSAGE PART
 
 string message = "piwo";
-string input = "test.png";
+string input = "dali.png";
 string output = "result.png";
 
+Console.WriteLine("Encrypting: " + message + " in: " + input + "...");
 LSB.EncryptPNGImage(input, output,message);
 
+Console.WriteLine();
+
+Console.WriteLine("Decrypting " + output + "...");
 BitArray bits = LSB.DecryptPNGImage(output);
 byte[] bytes = LSB.ToByteArray(bits);
 string text = Encoding.UTF8.GetString(bytes);

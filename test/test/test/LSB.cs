@@ -24,7 +24,7 @@ namespace test
             using (var bmp = new MagickImage(input_path))
             {
                 var pixels = bmp.GetPixelsUnsafe();
-                var mapping = bmp.HasAlpha ? PixelMapping.ARGB : PixelMapping.RGB;
+                var mapping = bmp.HasAlpha ? PixelMapping.RGBA : PixelMapping.RGB;
 
                 var bytes = pixels.ToByteArray(mapping);
 
@@ -46,10 +46,10 @@ namespace test
                 
                 for (int i = 0; i< Message.Bits.Count - 64; i++)
                 {
-                    int byteIndex = (int)(i * jump + 64);
+                    long byteIndex = (i * jump + 64);
                     if (byteIndex < bytes.Length)
                     {
-                        bytes[byteIndex] = SetLastBit(bytes[byteIndex], Message.Bits[i + 64]);
+                        bytes[(int)byteIndex] = SetLastBit(bytes[byteIndex], Message.Bits[i + 64]);
                         Console.Write(Message.Bits[i + 64] ? "1" : "0");
                     }
                     else
@@ -73,7 +73,7 @@ namespace test
             using (var bmp = new MagickImage(input_path))
             {
                 var pixels = bmp.GetPixelsUnsafe();
-                var mapping = bmp.HasAlpha ? PixelMapping.ARGB : PixelMapping.RGB;
+                var mapping = bmp.HasAlpha ? PixelMapping.RGBA : PixelMapping.RGB;
                 var bytes = pixels.ToByteArray(mapping);
 
                 //Length segment

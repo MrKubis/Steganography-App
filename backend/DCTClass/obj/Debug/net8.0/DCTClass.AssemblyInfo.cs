@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DCTClass")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e53d0ba3392c7a181be6322f94d2a30d0a5e5785")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa3cec550b71b45a5ec975e9c4ab620932f1677c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DCTClass")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DCTClass")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -4,6 +4,8 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DCTClass", "DCTClass\DCTClass.csproj", "{197B8C7E-7E3F-278D-49A6-195CA4BBCA32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stenography.API", "Stenography.API\Stenography.API.csproj", "{7A3161E4-611D-7AE9-4101-7E35B39A2F50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,6 +16,10 @@ Global
 		{197B8C7E-7E3F-278D-49A6-195CA4BBCA32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{197B8C7E-7E3F-278D-49A6-195CA4BBCA32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{197B8C7E-7E3F-278D-49A6-195CA4BBCA32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A3161E4-611D-7AE9-4101-7E35B39A2F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A3161E4-611D-7AE9-4101-7E35B39A2F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A3161E4-611D-7AE9-4101-7E35B39A2F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A3161E4-611D-7AE9-4101-7E35B39A2F50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

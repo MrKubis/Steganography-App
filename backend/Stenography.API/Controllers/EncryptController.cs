@@ -1,5 +1,6 @@
+using ImageMagick;
+using LSBClass;
 using Microsoft.AspNetCore.Mvc;
-using SixLabors.ImageSharp;
 
 namespace App.API.Controllers;
 
@@ -31,20 +32,21 @@ public class EncryptController : ControllerBase
         try
         {
             using var stream = file.OpenReadStream();
-            using var image = await Image.LoadAsync(stream);
-            
-            if (image.Width < 64 || image.Height < 1)
+            using (var image = new MagickImage(stream))
             {
-                return BadRequest(new { error = "Image must be at least 64px wide and 1px tall" });
+                if (image.Width < 64 || image.Height < 1)
+                {
+                    return BadRequest(new { error = "Image must be at least 64px wide and 1px tall" });
+                }
             }
+            var result = LSB.EncryptPNGImage(stream, message);
+            Console.WriteLine();
+            Console.WriteLine("File size: " + result.Length);
+            return File(result, "image/png", "encrypted.png");
         }
         catch (Exception ex)
         {
             return BadRequest(new { error = $"Invalid image file: {ex.Message}" });
         }
-
-        // TODO: Add encryption logic here
-
-        return Ok(new { message = "Encryption endpoint - logic not implemented yet" });
     }
 }

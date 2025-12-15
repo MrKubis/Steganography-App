@@ -13,13 +13,15 @@ namespace LSBClass
         private static LSBMessage _message;
         private static LSBMessage Message { get { return _message; } set { _message = value; } }
 
-        public static void EncryptPNGImage(string input_path, string output_path, string message)
+        public static byte[] EncryptPNGImage(Stream input_stream, string message)
         {
-            if (!File.Exists(input_path)) throw new FileNotFoundException();
-
+  
             Message = new LSBMessage(message);
-            using (var bmp = new MagickImage(input_path))
+            using (var bmp = new MagickImage(input_stream))
             {
+                Console.WriteLine(message);
+
+                var format = bmp.Format;
                 var pixels = bmp.GetPixelsUnsafe();
                 var mapping = bmp.HasAlpha ? PixelMapping.RGBA : PixelMapping.RGB;
 
@@ -56,18 +58,20 @@ namespace LSBClass
                 }
 
                 pixels.SetPixels(bytes);
-                bmp.Write(output_path);
+
+                using var output = new MemoryStream();
+
+                bmp.Write(output,format);
+                return output.ToArray();
             }
-
-
         }
 
-        public static BitArray DecryptPNGImage(string input_path)
+        public static BitArray DecryptPNGImage(Stream input_stream)
         {
-            if (!File.Exists(input_path)) throw new FileNotFoundException();
+
             List<bool> bits_list = new List<bool>();
 
-            using (var bmp = new MagickImage(input_path))
+            using (var bmp = new MagickImage(input_stream))
             {
                 var pixels = bmp.GetPixelsUnsafe();
                 var mapping = bmp.HasAlpha ? PixelMapping.RGBA : PixelMapping.RGB;
@@ -148,4 +152,4 @@ namespace LSBClass
         }
     }
 }
-}
+

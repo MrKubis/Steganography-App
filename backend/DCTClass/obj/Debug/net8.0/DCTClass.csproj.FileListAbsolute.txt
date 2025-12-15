@@ -23,3 +23,16 @@ C:\Users\bartl\RiderProjects\DCT\DCTClass\obj\Debug\net8.0\DCTClass.dll
 C:\Users\bartl\RiderProjects\DCT\DCTClass\obj\Debug\net8.0\refint\DCTClass.dll
 C:\Users\bartl\RiderProjects\DCT\DCTClass\obj\Debug\net8.0\DCTClass.pdb
 C:\Users\bartl\RiderProjects\DCT\DCTClass\obj\Debug\net8.0\ref\DCTClass.dll
+C:\Users\jakub\Documents\GitHub\Steganoraphy-App\backend\DCTClass\bin\Debug\net8.0\DCTClass.deps.json
+C:\Users\jakub\Documents\GitHub\Steganoraphy-App\backend\DCTClass\bin\Debug\net8.0\DCTClass.dll
+C:\Users\jakub\Documents\GitHub\Steganoraphy-App\backend\DCTClass\bin\Debug\net8.0\DCTClass.pdb
+C:\Users\jakub\Documents\GitHub\Steganoraphy-App\backend\DCTClass\obj\Debug\net8.0\DCTClass.csproj.AssemblyReference.cache
+C:\Users\jakub\Documents\GitHub\Steganoraphy-App\backend\DCTClass\obj\Debug\net8.0\DCTClass.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jakub\Documents\GitHub\Steganoraphy-App\backend\DCTClass\obj\Debug\net8.0\DCTClass.AssemblyInfoInputs.cache
+C:\Users\jakub\Documents\GitHub\Steganoraphy-App\backend\DCTClass\obj\Debug\net8.0\DCTClass.AssemblyInfo.cs
+C:\Users\jakub\Documents\GitHub\Steganoraphy-App\backend\DCTClass\obj\Debug\net8.0\DCTClass.csproj.CoreCompileInputs.cache
+C:\Users\jakub\Documents\GitHub\Steganoraphy-App\backend\DCTClass\obj\Debug\net8.0\DCTClass.sourcelink.json
+C:\Users\jakub\Documents\GitHub\Steganoraphy-App\backend\DCTClass\obj\Debug\net8.0\DCTClass.dll
+C:\Users\jakub\Documents\GitHub\Steganoraphy-App\backend\DCTClass\obj\Debug\net8.0\refint\DCTClass.dll
+C:\Users\jakub\Documents\GitHub\Steganoraphy-App\backend\DCTClass\obj\Debug\net8.0\DCTClass.pdb
+C:\Users\jakub\Documents\GitHub\Steganoraphy-App\backend\DCTClass\obj\Debug\net8.0\ref\DCTClass.dll

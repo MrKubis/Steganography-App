@@ -1,5 +1,6 @@
 using ImageMagick;
 using LSBClass;
+using DCTClass;
 using Microsoft.AspNetCore.Mvc;
 
 namespace App.API.Controllers;
@@ -39,7 +40,15 @@ public class EncryptController : ControllerBase
                     return BadRequest(new { error = "Image must be at least 64px wide and 1px tall" });
                 }
             }
-            var result = LSB.EncryptPNGImage(stream, message);
+            byte[] result;
+            if (fileExtension == ".jpg" || fileExtension == ".jpeg")
+            {
+                result = ClassDCT.Encrypt(stream,message);
+            }
+            else
+            {
+                result = LSB.EncryptPNGImage(stream, message);
+            }
             Console.WriteLine();
             Console.WriteLine("File size: " + result.Length);
             return File(result, "image/png", "encrypted.png");

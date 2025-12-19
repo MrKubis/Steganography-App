@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Text;
+using DCTClass;
 using ImageMagick;
 using LSBClass;
 using Microsoft.AspNetCore.Mvc;
@@ -38,9 +39,19 @@ public class DecryptController : ControllerBase
             {
                 return BadRequest(new { error = "Image must be at least 64px wide and 1px tall" });
             }
-            BitArray bits = LSB.DecryptPNGImage(stream);
-            byte[] bytes = LSB.ToByteArray(bits);
-            string text = Encoding.UTF8.GetString(bytes);
+
+            string text = "";
+            if (fileExtension == ".jpg" || fileExtension == ".jpeg")
+            {
+                text = ClassDCT.Decrypt(stream);
+            }
+            else
+            {
+                BitArray bits = LSB.DecryptPNGImage(stream);
+                byte[] bytes = LSB.ToByteArray(bits);
+                text = Encoding.UTF8.GetString(bytes);
+            }
+            
             Console.WriteLine(text);
             return Ok(text);
 

@@ -1,31 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jakub\\Documents\\GitHub\\Steganoraphy-App\\backend\\DCTClass\\DCTClass.csproj": {}
+    "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jakub\\Documents\\GitHub\\Steganoraphy-App\\backend\\DCTClass\\DCTClass.csproj": {
+    "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jakub\\Documents\\GitHub\\Steganoraphy-App\\backend\\DCTClass\\DCTClass.csproj",
+        "projectUniqueName": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj",
         "projectName": "DCTClass",
-        "projectPath": "C:\\Users\\jakub\\Documents\\GitHub\\Steganoraphy-App\\backend\\DCTClass\\DCTClass.csproj",
-        "packagesPath": "C:\\Users\\jakub\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jakub\\Documents\\GitHub\\Steganoraphy-App\\backend\\DCTClass\\obj\\",
+        "projectPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj",
+        "packagesPath": "/Users/bartek.janoszka/.nuget/packages/",
+        "outputPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jakub\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/bartek.janoszka/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "/Users/bartek.janoszka/.dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -50,6 +45,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Magick.NET-Q8-x64": {
+              "target": "Package",
+              "version": "[14.10.0, )"
+            },
             "System.Drawing.Common": {
               "target": "Package",
               "version": "[8.0.22, )"
@@ -71,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/Users/bartek.janoszka/.dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

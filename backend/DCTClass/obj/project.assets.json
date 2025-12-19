@@ -2,6 +2,56 @@
   "version": 3,
   "targets": {
     "net8.0": {
+      "Magick.NET-Q8-x64/14.10.0": {
+        "type": "package",
+        "dependencies": {
+          "Magick.NET.Core": "14.10.0"
+        },
+        "compile": {
+          "lib/net8.0/Magick.NET-Q8-x64.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Magick.NET-Q8-x64.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netstandard20/Magick.NET-Q8-x64.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-musl-x64/native/Magick.Native-Q8-x64.dll.so": {
+            "assetType": "native",
+            "rid": "linux-musl-x64"
+          },
+          "runtimes/linux-x64/native/Magick.Native-Q8-x64.dll.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/Magick.Native-Q8-x64.dll.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/Magick.Native-Q8-x64.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          }
+        }
+      },
+      "Magick.NET.Core/14.10.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Magick.NET.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Magick.NET.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.Win32.SystemEvents/8.0.0": {
         "type": "package",
         "compile": {
@@ -46,6 +96,48 @@
     }
   },
   "libraries": {
+    "Magick.NET-Q8-x64/14.10.0": {
+      "sha512": "ydDQ9eNPjlKFp7Dei26JMxuQ8ISIPeP27Rvt0xlnKV6OpqXwFcMxMArS4FV1r4ORfediQ9NsaICTEe0+MW3DbQ==",
+      "type": "package",
+      "path": "magick.net-q8-x64/14.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Magick.NET.icon.png",
+        "Notice.txt",
+        "build/netstandard20/Magick.NET-Q8-x64.targets",
+        "buildTransitive/netstandard20/Magick.NET-Q8-x64.targets",
+        "docs/Readme.md",
+        "lib/net8.0/Magick.NET-Q8-x64.dll",
+        "lib/net8.0/Magick.NET-Q8-x64.xml",
+        "lib/netstandard20/Magick.NET-Q8-x64.dll",
+        "lib/netstandard20/Magick.NET-Q8-x64.xml",
+        "magick.net-q8-x64.14.10.0.nupkg.sha512",
+        "magick.net-q8-x64.nuspec",
+        "runtimes/linux-musl-x64/native/Magick.Native-Q8-x64.dll.so",
+        "runtimes/linux-x64/native/Magick.Native-Q8-x64.dll.so",
+        "runtimes/osx-x64/native/Magick.Native-Q8-x64.dll.dylib",
+        "runtimes/win-x64/native/Magick.Native-Q8-x64.dll"
+      ]
+    },
+    "Magick.NET.Core/14.10.0": {
+      "sha512": "MgL24O4CWdPB3VOzsJF/npYjv1frFd43R4HsCGVA3QZc6UkMZNtXf8y8ecUIi62EkCtZR2nvN/fu3Yqdwi6uxQ==",
+      "type": "package",
+      "path": "magick.net.core/14.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Copyright.txt",
+        "Magick.NET.icon.png",
+        "docs/Readme.md",
+        "lib/net8.0/Magick.NET.Core.dll",
+        "lib/net8.0/Magick.NET.Core.xml",
+        "lib/netstandard20/Magick.NET.Core.dll",
+        "lib/netstandard20/Magick.NET.Core.xml",
+        "magick.net.core.14.10.0.nupkg.sha512",
+        "magick.net.core.nuspec"
+      ]
+    },
     "Microsoft.Win32.SystemEvents/8.0.0": {
       "sha512": "9opKRyOKMCi2xJ7Bj7kxtZ1r9vbzosMvRrdEhVhDz8j8MoBGgB+WmC94yH839NPH+BclAjtQ/pyagvi/8gDLkw==",
       "type": "package",
@@ -124,35 +216,30 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "Magick.NET-Q8-x64 >= 14.10.0",
       "System.Drawing.Common >= 8.0.22"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\jakub\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/bartek.janoszka/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\jakub\\Documents\\GitHub\\Steganoraphy-App\\backend\\DCTClass\\DCTClass.csproj",
+      "projectUniqueName": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj",
       "projectName": "DCTClass",
-      "projectPath": "C:\\Users\\jakub\\Documents\\GitHub\\Steganoraphy-App\\backend\\DCTClass\\DCTClass.csproj",
-      "packagesPath": "C:\\Users\\jakub\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\jakub\\Documents\\GitHub\\Steganoraphy-App\\backend\\DCTClass\\obj\\",
+      "projectPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj",
+      "packagesPath": "/Users/bartek.janoszka/.nuget/packages/",
+      "outputPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\jakub\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/bartek.janoszka/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "/Users/bartek.janoszka/.dotnet/library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -177,6 +264,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Magick.NET-Q8-x64": {
+            "target": "Package",
+            "version": "[14.10.0, )"
+          },
           "System.Drawing.Common": {
             "target": "Package",
             "version": "[8.0.22, )"
@@ -198,7 +289,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/bartek.janoszka/.dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

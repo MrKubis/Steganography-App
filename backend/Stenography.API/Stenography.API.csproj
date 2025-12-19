@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DCTClass\DCTClass.csproj" />
     <ProjectReference Include="..\LSBClass\LSBClass.csproj" />
   </ItemGroup>
 

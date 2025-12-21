@@ -156,15 +156,27 @@ public class ClassDCT
 
     public static byte[] Encrypt(Stream inputStream, string message)
     {
+        try
+        {
+            inputStream.Position = 0;
+            using var testImage = new MagickImage(inputStream);
+            {
+                
+            }
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e.Message);
+            throw;
+        }
+
+        inputStream.Position = 0;
         using var image = new MagickImage(inputStream);
-
         image.Format = MagickFormat.Png;
-
         message += Terminator;
         List<int> bits = StringToBits(message);
         int bitIndex = 0;
         int bitMessageLength = bits.Count;
-
         int width = (int)image.Width - ((int)image.Width % 8);
         int height = (int)image.Height - ((int)image.Height % 8);
 
@@ -201,7 +213,6 @@ public class ClassDCT
                 if (finished) break;
             }
         }
-
         return image.ToByteArray();
     }
 

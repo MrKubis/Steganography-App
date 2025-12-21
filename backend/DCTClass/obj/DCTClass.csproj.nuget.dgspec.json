@@ -45,7 +45,7 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Magick.NET-Q8-x64": {
+            "Magick.NET-Q8-AnyCPU": {
               "target": "Package",
               "version": "[14.10.0, )"
             },

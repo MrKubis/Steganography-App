@@ -17,6 +17,7 @@ namespace LSBClass
         {
   
             Message = new LSBMessage(message);
+            input_stream.Position = 0;
             using (var bmp = new MagickImage(input_stream))
             {
                 Console.WriteLine(message);

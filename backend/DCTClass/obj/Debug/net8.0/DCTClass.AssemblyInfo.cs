@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DCTClass")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+680733bac8f08e906d2c18d4f8cdb8ea48a66884")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c67c80af54a687acf84fc5ea8ad0dee130fde9b8")]
 [assembly: System.Reflection.AssemblyProductAttribute("DCTClass")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DCTClass")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

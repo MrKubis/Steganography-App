@@ -22,7 +22,7 @@ public class EncryptController : ControllerBase
         
         if (!allowedExtensions.Contains(fileExtension))
         {
-            return BadRequest(new { error = "Invalid file type. Accepted types: png, jpeg, bmp, gif" });
+            return BadRequest(new { error = "Invalid file type. Accepted types: png, jpeg, jpg, bmp, gif" });
         }
 
         if (string.IsNullOrWhiteSpace(message))
@@ -41,17 +41,22 @@ public class EncryptController : ControllerBase
                 }
             }
             byte[] result;
+            var fileType = fileExtension[1..];
+            Console.WriteLine(fileExtension);
             if (fileExtension == ".jpg" || fileExtension == ".jpeg")
             {
+                Console.WriteLine("DCT");
                 result = ClassDCT.Encrypt(stream,message);
             }
             else
             {
+                Console.WriteLine("LSB");
                 result = LSB.EncryptPNGImage(stream, message);
             }
             Console.WriteLine();
             Console.WriteLine("File size: " + result.Length);
-            return File(result, "image/png", "encrypted.png");
+            return File(result, $"image/{fileType}", $"encrypted{fileExtension}");
+            
         }
         catch (Exception ex)
         {

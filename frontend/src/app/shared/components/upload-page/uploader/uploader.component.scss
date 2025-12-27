@@ -1,0 +1,83 @@
+@use 'sass:color';
+@use '../../../../../variables' as *;
+
+.uploader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 3rem;
+
+    .title {
+        z-index: 10;
+        text-transform: uppercase;
+        flex: 0;
+        text-align: center;
+
+        &.selected {
+            opacity: .3;
+        }
+    }
+
+    .upload-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 0;
+        height: 100%;
+        overflow-y: auto;
+        flex: 1;
+        box-sizing: border-box;
+        margin: 1rem 0;
+        gap: 1rem;
+        
+        .image-preview-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+    
+            img {
+                max-height: 200px;
+                border: solid 2px gray;
+                border-radius: 12px;
+                -webkit-box-shadow: 0px 0px 85px 32px rgba(0, 0, 0, 1);
+                -moz-box-shadow: 0px 0px 85px 32px rgba(0, 0, 0, 1);
+                box-shadow: 0px 0px 85px 32px rgba(0, 0, 0, 1);
+            }
+    
+            .image-metadata {
+                .file-size {
+                    opacity: .5;
+                }
+            }
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .custom-file-upload {
+            border: solid 2px gray;
+            border-radius: 12px;
+            padding: .5rem 1rem;
+            background-color: $background-color;
+            color: white;
+            font-family: inherit;
+            font-size: large;
+            cursor: pointer;
+
+            &:hover {
+                background-color: color.adjust($background-color, $lightness: 3%);
+            }
+        }
+    }
+
+    .upload-btn {
+        flex: 0;
+    }
+}

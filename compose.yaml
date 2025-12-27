@@ -1,0 +1,17 @@
+services:
+    backend:
+        container_name: steg-back
+        build: ./backend
+        ports:
+            - "5149:5149"
+        environment:
+            - ASPNETCORE_ENVIRONMENT=Development
+
+    frontend:
+        container_name: steg-front
+        build: ./frontend
+        ports:
+            - "4200:4200"
+        depends_on:
+            - backend
+            

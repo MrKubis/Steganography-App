@@ -1,0 +1,48 @@
+<div class="uploader-container">
+    <h2 class="title" [ngClass]="{ 'selected': selectedFile }" > {{ selectedFile ?  'Ready for upload...' : 'Upload file' }} </h2>
+    <div class="upload-section">
+        @if (selectedFile) {
+            <div class="image-preview-container">
+                <img [src]="filePreview" alt="Uploaded image" />
+                <div class="image-metadata">
+                    <p> 
+                        {{ selectedFile.name.toUpperCase() }} 
+                        <span class="file-size">
+                            ({{ (selectedFile.size / 1024).toFixed(2) }} KB)
+                        </span> 
+                    </p>
+                </div>
+            </div>
+    
+        } @else {
+            <p>Accepted file types: png, jpeg, bmp and gif.</p>
+        }
+
+
+        <label for="file-upload" class="custom-file-upload">
+            Browse Files
+        </label>
+        <input 
+            type="file"
+            accept="image/png, image/jpeg, image/bmp, image/gif"
+            (change)="onFileSelected($event)"
+            id="file-upload"
+        />
+
+        @if (isMessageRequired) {
+            <input 
+                type="text"
+                name="message"
+                id="message"
+                class="message-input"
+                placeholder="Enter the text to be encrypted..."
+                [(ngModel)]="message"
+            />
+        }
+    </div>
+    <button 
+        class="upload-btn"
+        [disabled]="!selectedFile || (!message.length && isMessageRequired)"
+        (click)="onUpload()"
+    >Upload</button>
+</div>

@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "32iCswEthEd6hT8qTZEBvwrVu4MV9E9VGa8n2NFUVbs=",
+  "Source": "Stenography.API",
+  "BasePath": "_content/Stenography.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

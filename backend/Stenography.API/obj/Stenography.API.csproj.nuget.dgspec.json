@@ -1,0 +1,228 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/Stenography.API/Stenography.API.csproj": {}
+  },
+  "projects": {
+    "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj",
+        "projectName": "DCTClass",
+        "projectPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj",
+        "packagesPath": "/Users/bartek.janoszka/.nuget/packages/",
+        "outputPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/bartek.janoszka/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/Users/bartek.janoszka/.dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Magick.NET-Q8-AnyCPU": {
+              "target": "Package",
+              "version": "[14.10.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[8.0.22, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/bartek.janoszka/.dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/LSBClass.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/LSBClass.csproj",
+        "projectName": "LSBClass",
+        "projectPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/LSBClass.csproj",
+        "packagesPath": "/Users/bartek.janoszka/.nuget/packages/",
+        "outputPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/bartek.janoszka/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/Users/bartek.janoszka/.dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Magick.NET-Q8-AnyCPU": {
+              "target": "Package",
+              "version": "[14.10.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/bartek.janoszka/.dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/Stenography.API/Stenography.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/Stenography.API/Stenography.API.csproj",
+        "projectName": "Stenography.API",
+        "projectPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/Stenography.API/Stenography.API.csproj",
+        "packagesPath": "/Users/bartek.janoszka/.nuget/packages/",
+        "outputPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/Stenography.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/bartek.janoszka/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "/Users/bartek.janoszka/.dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj": {
+                "projectPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj"
+              },
+              "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/LSBClass.csproj": {
+                "projectPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/LSBClass.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Magick.NET-Q8-AnyCPU": {
+              "target": "Package",
+              "version": "[14.10.0, )"
+            },
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/bartek.janoszka/.dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/bin/Debug/net8.0/LSBClass.deps.json
+/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/bin/Debug/net8.0/LSBClass.dll
+/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/bin/Debug/net8.0/LSBClass.pdb
+/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/obj/Debug/net8.0/LSBClass.csproj.AssemblyReference.cache
+/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/obj/Debug/net8.0/LSBClass.GeneratedMSBuildEditorConfig.editorconfig
+/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/obj/Debug/net8.0/LSBClass.AssemblyInfoInputs.cache
+/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/obj/Debug/net8.0/LSBClass.AssemblyInfo.cs
+/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/obj/Debug/net8.0/LSBClass.csproj.CoreCompileInputs.cache
+/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/obj/Debug/net8.0/LSBClass.sourcelink.json
+/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/obj/Debug/net8.0/LSBClass.dll
+/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/obj/Debug/net8.0/refint/LSBClass.dll
+/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/obj/Debug/net8.0/LSBClass.pdb
+/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/obj/Debug/net8.0/ref/LSBClass.dll

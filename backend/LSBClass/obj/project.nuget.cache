@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "f3i/Zft4uQI=",
+  "success": true,
+  "projectFilePath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/LSBClass.csproj",
+  "expectedPackageFiles": [
+    "/Users/bartek.janoszka/.nuget/packages/magick.net-q8-anycpu/14.10.0/magick.net-q8-anycpu.14.10.0.nupkg.sha512",
+    "/Users/bartek.janoszka/.nuget/packages/magick.net.core/14.10.0/magick.net.core.14.10.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,10 @@
+<div class="decrypt-container">
+    @if (!isUploading) {
+        <app-uploader [isMessageRequired]="false" (upload)="handleFileUpload($event)"></app-uploader>
+    } @else {
+        <div class="loader-container">
+            <div class="loader"></div>
+            <p>Uploading...</p>
+        </div>
+    }
+</div>

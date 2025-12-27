@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/Stenography.API.props" />
+</Project>

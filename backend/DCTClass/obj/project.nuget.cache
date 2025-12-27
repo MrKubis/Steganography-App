@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "yLh5ZQQrwCs=",
+  "success": true,
+  "projectFilePath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj",
+  "expectedPackageFiles": [
+    "/Users/bartek.janoszka/.nuget/packages/magick.net-q8-anycpu/14.10.0/magick.net-q8-anycpu.14.10.0.nupkg.sha512",
+    "/Users/bartek.janoszka/.nuget/packages/magick.net.core/14.10.0/magick.net.core.14.10.0.nupkg.sha512",
+    "/Users/bartek.janoszka/.nuget/packages/microsoft.win32.systemevents/8.0.0/microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "/Users/bartek.janoszka/.nuget/packages/system.drawing.common/8.0.22/system.drawing.common.8.0.22.nupkg.sha512"
+  ],
+  "logs": []
+}

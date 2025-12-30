@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.Text;
 using ImageMagick;
 
 namespace DCTClass;
@@ -166,7 +163,6 @@ public class ClassDCT
         }
         catch (Exception e)
         {
-            Console.WriteLine(e.Message);
             throw;
         }
 

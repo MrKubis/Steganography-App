@@ -4,8 +4,6 @@ using DCTClass;
 using ImageMagick;
 using LSBClass;
 using Microsoft.AspNetCore.Mvc;
-using SixLabors.ImageSharp;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace App.API.Controllers;
 
@@ -16,8 +14,6 @@ public class DecryptController : ControllerBase
     [HttpPost("decrypt")]
     public async Task<IActionResult> Decrypt(IFormFile file)
     {
-        Console.WriteLine("jaja");
-
         if (file == null || file.Length == 0)
         {
             return BadRequest(new { error = "File is required" });
@@ -50,9 +46,7 @@ public class DecryptController : ControllerBase
                 BitArray bits = LSB.DecryptPNGImage(stream);
                 byte[] bytes = LSB.ToByteArray(bits);
                 text = Encoding.UTF8.GetString(bytes);
-            }
-            
-            Console.WriteLine(text);
+            }      
             return Ok(text);
 
         }

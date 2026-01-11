@@ -21,7 +21,11 @@ export class EncryptComponentComponent implements UploadStrategyComponent {
 
     this._uploadService.encrypt(data.file, data.message).subscribe({
       next: response => {
-        console.log(response);
+        const url = window.URL.createObjectURL(response);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `encrypted-${new Date().toISOString().replace(/:/g, '-')}.png`;
+        a.click();
       },
       error: () => {
         this.isUploading = false;

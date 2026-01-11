@@ -49,3 +49,16 @@ C:/Users/jakub/Documents/GitHub/Steganoraphy-App/backend/DCTClass/obj/Debug/net8
 /Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/obj/Debug/net8.0/refint/DCTClass.dll
 /Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/obj/Debug/net8.0/DCTClass.pdb
 /Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/obj/Debug/net8.0/ref/DCTClass.dll
+/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/bin/Debug/net8.0/DCTClass.deps.json
+/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/bin/Debug/net8.0/DCTClass.dll
+/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/bin/Debug/net8.0/DCTClass.pdb
+/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/obj/Debug/net8.0/DCTClass.csproj.AssemblyReference.cache
+/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/obj/Debug/net8.0/DCTClass.GeneratedMSBuildEditorConfig.editorconfig
+/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/obj/Debug/net8.0/DCTClass.AssemblyInfoInputs.cache
+/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/obj/Debug/net8.0/DCTClass.AssemblyInfo.cs
+/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/obj/Debug/net8.0/DCTClass.csproj.CoreCompileInputs.cache
+/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/obj/Debug/net8.0/DCTClass.sourcelink.json
+/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/obj/Debug/net8.0/DCTClass.dll
+/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/obj/Debug/net8.0/refint/DCTClass.dll
+/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/obj/Debug/net8.0/DCTClass.pdb
+/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/obj/Debug/net8.0/ref/DCTClass.dll

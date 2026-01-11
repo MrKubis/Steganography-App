@@ -1,13 +1,36 @@
 {
   "version": 2,
-  "dgSpecHash": "yLh5ZQQrwCs=",
+  "dgSpecHash": "NvAyzNFJ7TM=",
   "success": true,
-  "projectFilePath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj",
+  "projectFilePath": "/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/DCTClass.csproj",
   "expectedPackageFiles": [
-    "/Users/bartek.janoszka/.nuget/packages/magick.net-q8-anycpu/14.10.0/magick.net-q8-anycpu.14.10.0.nupkg.sha512",
-    "/Users/bartek.janoszka/.nuget/packages/magick.net.core/14.10.0/magick.net.core.14.10.0.nupkg.sha512",
-    "/Users/bartek.janoszka/.nuget/packages/microsoft.win32.systemevents/8.0.0/microsoft.win32.systemevents.8.0.0.nupkg.sha512",
-    "/Users/bartek.janoszka/.nuget/packages/system.drawing.common/8.0.22/system.drawing.common.8.0.22.nupkg.sha512"
+    "/home/janek/.nuget/packages/magick.net-q8-anycpu/14.10.0/magick.net-q8-anycpu.14.10.0.nupkg.sha512",
+    "/home/janek/.nuget/packages/magick.net.core/14.10.0/magick.net.core.14.10.0.nupkg.sha512",
+    "/home/janek/.nuget/packages/microsoft.win32.systemevents/8.0.0/microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "/home/janek/.nuget/packages/system.drawing.common/8.0.22/system.drawing.common.8.0.22.nupkg.sha512",
+    "/home/janek/.nuget/packages/microsoft.netcore.app.ref/8.0.20/microsoft.netcore.app.ref.8.0.20.nupkg.sha512",
+    "/home/janek/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.20/microsoft.aspnetcore.app.ref.8.0.20.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Magick.NET-Q8-AnyCPU' 14.10.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-7rvh-xqp3-pr8j",
+      "libraryId": "Magick.NET-Q8-AnyCPU",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Magick.NET-Q8-AnyCPU' 14.10.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-p27m-hp98-6637",
+      "libraryId": "Magick.NET-Q8-AnyCPU",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

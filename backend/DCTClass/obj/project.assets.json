@@ -241,19 +241,19 @@
     ]
   },
   "packageFolders": {
-    "/home/janek/.nuget/packages/": {}
+    "C:\\Users\\bartl\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/DCTClass.csproj",
+      "projectUniqueName": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj",
       "projectName": "DCTClass",
-      "projectPath": "/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/DCTClass.csproj",
-      "packagesPath": "/home/janek/.nuget/packages/",
-      "outputPath": "/home/janek/Studia/Inżynieria Oprogramowania/Steganography-App/backend/DCTClass/obj/",
+      "projectPath": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj",
+      "packagesPath": "C:\\Users\\bartl\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/janek/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\bartl\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -277,7 +277,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -306,11 +306,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
+            "version": "[8.0.22, 8.0.22]"
           },
           {
             "name": "Microsoft.NETCore.App.Ref",
-            "version": "[8.0.20, 8.0.20]"
+            "version": "[8.0.22, 8.0.22]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.22, 8.0.22]"
           }
         ],
         "frameworkReferences": {
@@ -318,7 +322,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.110/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\bartl\\.dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

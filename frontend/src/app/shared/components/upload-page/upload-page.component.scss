@@ -1,0 +1,21 @@
+@use '../../../../variables' as *;
+
+.upload-page-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .upload-container {
+        width: 60vw;
+        height: 85vh;
+        background-color: $upload-container-bg;
+        backdrop-filter: blur(8px);
+        border: solid 2px gray;
+        border-radius: 12px;
+        -webkit-box-shadow: 0px 0px 85px 32px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0px 0px 85px 32px rgba(0, 0, 0, 1);
+        box-shadow: 0px 0px 85px 32px rgba(0, 0, 0, 1);
+    }
+}

@@ -1,16 +1,41 @@
 {
   "version": 2,
-  "dgSpecHash": "pvOlBHS2JGM=",
+  "dgSpecHash": "jPZLIJP87n8=",
   "success": true,
-  "projectFilePath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/Stenography.API/Stenography.API.csproj",
+  "projectFilePath": "C:\\Users\\bartl\\steg\\backend\\Stenography.API\\Stenography.API.csproj",
   "expectedPackageFiles": [
-    "/Users/bartek.janoszka/.nuget/packages/magick.net-q8-anycpu/14.10.0/magick.net-q8-anycpu.14.10.0.nupkg.sha512",
-    "/Users/bartek.janoszka/.nuget/packages/magick.net.core/14.10.0/magick.net.core.14.10.0.nupkg.sha512",
-    "/Users/bartek.janoszka/.nuget/packages/microsoft.aspnetcore.openapi/9.0.9/microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
-    "/Users/bartek.janoszka/.nuget/packages/microsoft.openapi/1.6.17/microsoft.openapi.1.6.17.nupkg.sha512",
-    "/Users/bartek.janoszka/.nuget/packages/microsoft.win32.systemevents/8.0.0/microsoft.win32.systemevents.8.0.0.nupkg.sha512",
-    "/Users/bartek.janoszka/.nuget/packages/sixlabors.imagesharp/3.1.12/sixlabors.imagesharp.3.1.12.nupkg.sha512",
-    "/Users/bartek.janoszka/.nuget/packages/system.drawing.common/8.0.22/system.drawing.common.8.0.22.nupkg.sha512"
+    "C:\\Users\\bartl\\.nuget\\packages\\magick.net-q8-anycpu\\14.10.0\\magick.net-q8-anycpu.14.10.0.nupkg.sha512",
+    "C:\\Users\\bartl\\.nuget\\packages\\magick.net.core\\14.10.0\\magick.net.core.14.10.0.nupkg.sha512",
+    "C:\\Users\\bartl\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.9\\microsoft.aspnetcore.openapi.9.0.9.nupkg.sha512",
+    "C:\\Users\\bartl\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512",
+    "C:\\Users\\bartl\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
+    "C:\\Users\\bartl\\.nuget\\packages\\sixlabors.imagesharp\\3.1.12\\sixlabors.imagesharp.3.1.12.nupkg.sha512",
+    "C:\\Users\\bartl\\.nuget\\packages\\system.drawing.common\\8.0.22\\system.drawing.common.8.0.22.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'Magick.NET-Q8-AnyCPU' 14.10.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-7rvh-xqp3-pr8j",
+      "projectPath": "C:\\Users\\bartl\\steg\\backend\\Stenography.API\\Stenography.API.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\bartl\\steg\\backend\\Stenography.API\\Stenography.API.csproj",
+      "libraryId": "Magick.NET-Q8-AnyCPU",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'Magick.NET-Q8-AnyCPU' 14.10.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-p27m-hp98-6637",
+      "projectPath": "C:\\Users\\bartl\\steg\\backend\\Stenography.API\\Stenography.API.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\bartl\\steg\\backend\\Stenography.API\\Stenography.API.csproj",
+      "libraryId": "Magick.NET-Q8-AnyCPU",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
 }

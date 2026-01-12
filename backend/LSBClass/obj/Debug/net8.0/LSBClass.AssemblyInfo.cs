@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("LSBClass")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4c6003d7a30935d870af0cd6724b95a52337f30")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34bd2eb739b5b8b4ed9da7c430719d8afa7e3ed3")]
 [assembly: System.Reflection.AssemblyProductAttribute("LSBClass")]
 [assembly: System.Reflection.AssemblyTitleAttribute("LSBClass")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

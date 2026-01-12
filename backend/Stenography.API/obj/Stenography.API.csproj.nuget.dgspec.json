@@ -1,26 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/Stenography.API/Stenography.API.csproj": {}
+    "C:\\Users\\bartl\\steg\\backend\\Stenography.API\\Stenography.API.csproj": {}
   },
   "projects": {
-    "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj": {
+    "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj",
+        "projectUniqueName": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj",
         "projectName": "DCTClass",
-        "projectPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj",
-        "packagesPath": "/Users/bartek.janoszka/.nuget/packages/",
-        "outputPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/obj/",
+        "projectPath": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj",
+        "packagesPath": "C:\\Users\\bartl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/bartek.janoszka/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\bartl\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/Users/bartek.janoszka/.dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -39,7 +38,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -65,32 +64,45 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/bartek.janoszka/.dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\bartl\\.dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/LSBClass.csproj": {
+    "C:\\Users\\bartl\\steg\\backend\\LSBClass\\LSBClass.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/LSBClass.csproj",
+        "projectUniqueName": "C:\\Users\\bartl\\steg\\backend\\LSBClass\\LSBClass.csproj",
         "projectName": "LSBClass",
-        "projectPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/LSBClass.csproj",
-        "packagesPath": "/Users/bartek.janoszka/.nuget/packages/",
-        "outputPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/obj/",
+        "projectPath": "C:\\Users\\bartl\\steg\\backend\\LSBClass\\LSBClass.csproj",
+        "packagesPath": "C:\\Users\\bartl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bartl\\steg\\backend\\LSBClass\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/bartek.janoszka/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\bartl\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "/Users/bartek.janoszka/.dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -109,7 +121,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -131,43 +143,56 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[8.0.22, 8.0.22]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/bartek.janoszka/.dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\bartl\\.dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/Stenography.API/Stenography.API.csproj": {
+    "C:\\Users\\bartl\\steg\\backend\\Stenography.API\\Stenography.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/Stenography.API/Stenography.API.csproj",
+        "projectUniqueName": "C:\\Users\\bartl\\steg\\backend\\Stenography.API\\Stenography.API.csproj",
         "projectName": "Stenography.API",
-        "projectPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/Stenography.API/Stenography.API.csproj",
-        "packagesPath": "/Users/bartek.janoszka/.nuget/packages/",
-        "outputPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/Stenography.API/obj/",
+        "projectPath": "C:\\Users\\bartl\\steg\\backend\\Stenography.API\\Stenography.API.csproj",
+        "packagesPath": "C:\\Users\\bartl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\bartl\\steg\\backend\\Stenography.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/bartek.janoszka/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\bartl\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
         ],
         "sources": {
-          "/Users/bartek.janoszka/.dotnet/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj": {
-                "projectPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/DCTClass/DCTClass.csproj"
+              "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj": {
+                "projectPath": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj"
               },
-              "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/LSBClass.csproj": {
-                "projectPath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/LSBClass.csproj"
+              "C:\\Users\\bartl\\steg\\backend\\LSBClass\\LSBClass.csproj": {
+                "projectPath": "C:\\Users\\bartl\\steg\\backend\\LSBClass\\LSBClass.csproj"
               }
             }
           }
@@ -182,7 +207,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.200"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net9.0": {
@@ -220,7 +245,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/Users/bartek.janoszka/.dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\bartl\\.dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

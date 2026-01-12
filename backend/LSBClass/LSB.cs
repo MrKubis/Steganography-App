@@ -69,9 +69,9 @@ namespace LSBClass
 
         public static BitArray DecryptPNGImage(Stream input_stream)
         {
-
+            
             List<bool> bits_list = new List<bool>();
-
+            input_stream.Position = 0;
             using (var bmp = new MagickImage(input_stream))
             {
                 var pixels = bmp.GetPixelsUnsafe();

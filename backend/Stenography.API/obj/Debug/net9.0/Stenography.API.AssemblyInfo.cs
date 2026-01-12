@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Stenography.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c4c6003d7a30935d870af0cd6724b95a52337f30")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+34bd2eb739b5b8b4ed9da7c430719d8afa7e3ed3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Stenography.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Stenography.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

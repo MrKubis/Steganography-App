@@ -1,11 +1,39 @@
 {
   "version": 2,
-  "dgSpecHash": "f3i/Zft4uQI=",
+  "dgSpecHash": "WtM9rf25j/8=",
   "success": true,
-  "projectFilePath": "/Users/bartek.janoszka/RiderProjects/Steganoraphy-App/backend/LSBClass/LSBClass.csproj",
+  "projectFilePath": "C:\\Users\\bartl\\steg\\backend\\LSBClass\\LSBClass.csproj",
   "expectedPackageFiles": [
-    "/Users/bartek.janoszka/.nuget/packages/magick.net-q8-anycpu/14.10.0/magick.net-q8-anycpu.14.10.0.nupkg.sha512",
-    "/Users/bartek.janoszka/.nuget/packages/magick.net.core/14.10.0/magick.net.core.14.10.0.nupkg.sha512"
+    "C:\\Users\\bartl\\.nuget\\packages\\magick.net-q8-anycpu\\14.10.0\\magick.net-q8-anycpu.14.10.0.nupkg.sha512",
+    "C:\\Users\\bartl\\.nuget\\packages\\magick.net.core\\14.10.0\\magick.net.core.14.10.0.nupkg.sha512",
+    "C:\\Users\\bartl\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.22\\microsoft.netcore.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\bartl\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.22\\microsoft.windowsdesktop.app.ref.8.0.22.nupkg.sha512",
+    "C:\\Users\\bartl\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.22\\microsoft.aspnetcore.app.ref.8.0.22.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'Magick.NET-Q8-AnyCPU' 14.10.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-7rvh-xqp3-pr8j",
+      "projectPath": "C:\\Users\\bartl\\steg\\backend\\LSBClass\\LSBClass.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\bartl\\steg\\backend\\LSBClass\\LSBClass.csproj",
+      "libraryId": "Magick.NET-Q8-AnyCPU",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1902",
+      "level": "Warning",
+      "message": "Package 'Magick.NET-Q8-AnyCPU' 14.10.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-p27m-hp98-6637",
+      "projectPath": "C:\\Users\\bartl\\steg\\backend\\LSBClass\\LSBClass.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\bartl\\steg\\backend\\LSBClass\\LSBClass.csproj",
+      "libraryId": "Magick.NET-Q8-AnyCPU",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

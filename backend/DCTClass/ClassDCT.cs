@@ -156,19 +156,6 @@ public class ClassDCT
 
     public static byte[] Encrypt(Stream inputStream, string message)
     {
-        try
-        {
-            inputStream.Position = 0;
-            using var testImage = new MagickImage(inputStream);
-            {
-                
-            }
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e.Message);
-            throw;
-        }
 
         inputStream.Position = 0;
         using var image = new MagickImage(inputStream);
@@ -218,6 +205,7 @@ public class ClassDCT
 
     public static string Decrypt(Stream inputStream)
     {
+        inputStream.Position = 0;
         using var image = new MagickImage(inputStream);
 
         int width = (int)image.Width - ((int)image.Width % 8);

@@ -20,8 +20,15 @@ export class EncryptComponentComponent implements UploadStrategyComponent {
     this.isUploading = true;
 
     this._uploadService.encrypt(data.file, data.message).subscribe({
-      next: response => {
-        console.log(response);
+      next: (response: Blob) => {
+        const url = window.URL.createObjectURL(response);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `encrypted-${data.file.name}`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url);
       },
       error: () => {
         this.isUploading = false;

@@ -11,6 +11,7 @@ import { UploadService } from '../../../services/upload.service';
 })
 export class DecryptComponentComponent implements UploadStrategyComponent {
   isUploading: boolean = false;
+  decryptedMessage: string | null = null;
 
   constructor(private _uploadService: UploadService) {}
 
@@ -18,10 +19,11 @@ export class DecryptComponentComponent implements UploadStrategyComponent {
     if (!data.file) return;
 
     this.isUploading = true;
+    this.decryptedMessage = null;
 
     this._uploadService.decrypt(data.file).subscribe({
       next: response => {
-        console.log(response);
+        this.decryptedMessage = response.message;
       },
       error: () => {
         this.isUploading = false;

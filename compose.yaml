@@ -4,8 +4,8 @@ services:
         build: ./backend
         ports:
             - "5149:5149"
-        environment:
-            - ASPNETCORE_ENVIRONMENT=Development
+        env_file:
+            - ./.env
 
     frontend:
         container_name: steg-front

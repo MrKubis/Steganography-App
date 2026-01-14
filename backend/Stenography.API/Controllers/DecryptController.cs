@@ -5,6 +5,7 @@ using ImageMagick;
 using LSBClass;
 using Microsoft.AspNetCore.Mvc;
 using SixLabors.ImageSharp;
+using Stenography.API;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace App.API.Controllers;
@@ -13,6 +14,12 @@ namespace App.API.Controllers;
 [Route("api")]
 public class DecryptController : ControllerBase
 {
+    private readonly CryptoService _cryptoService;
+
+    public DecryptController(CryptoService cryptoService)
+    {
+        _cryptoService = cryptoService;
+    }
     [HttpPost("decrypt")]
     public async Task<IActionResult> Decrypt(IFormFile file)
     {
@@ -33,7 +40,6 @@ public class DecryptController : ControllerBase
 
         try
         {
-            
             using var stream = file.OpenReadStream();
             stream.Position = 0;
             MagickImage image = new MagickImage(stream);
@@ -53,9 +59,9 @@ public class DecryptController : ControllerBase
                 byte[] bytes = LSB.ToByteArray(bits);
                 text = Encoding.UTF8.GetString(bytes);
             }
-            
-            Console.WriteLine(text);
-            return Ok(text);
+            var message = _cryptoService.Decrypt(text);
+            Console.WriteLine(message);
+            return Ok(message);
 
         }
         catch (Exception ex)

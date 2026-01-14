@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj": {}
+    "C:\\Users\\bartl\\GItHub\\Steganography-App\\backend\\DCTClass\\DCTClass.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj": {
+    "C:\\Users\\bartl\\GItHub\\Steganography-App\\backend\\DCTClass\\DCTClass.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj",
+        "projectUniqueName": "C:\\Users\\bartl\\GItHub\\Steganography-App\\backend\\DCTClass\\DCTClass.csproj",
         "projectName": "DCTClass",
-        "projectPath": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj",
+        "projectPath": "C:\\Users\\bartl\\GItHub\\Steganography-App\\backend\\DCTClass\\DCTClass.csproj",
         "packagesPath": "C:\\Users\\bartl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\obj\\",
+        "outputPath": "C:\\Users\\bartl\\GItHub\\Steganography-App\\backend\\DCTClass\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\bartl\\AppData\\Roaming\\NuGet\\NuGet.Config"

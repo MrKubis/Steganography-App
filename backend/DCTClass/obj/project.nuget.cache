@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RYGhsjXfnRI=",
+  "dgSpecHash": "yfCs/4pJ+Dg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj",
+  "projectFilePath": "C:\\Users\\bartl\\GItHub\\Steganography-App\\backend\\DCTClass\\DCTClass.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\bartl\\.nuget\\packages\\magick.net-q8-anycpu\\14.10.0\\magick.net-q8-anycpu.14.10.0.nupkg.sha512",
     "C:\\Users\\bartl\\.nuget\\packages\\magick.net.core\\14.10.0\\magick.net.core.14.10.0.nupkg.sha512",
@@ -17,9 +17,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Package 'Magick.NET-Q8-AnyCPU' 14.10.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-7rvh-xqp3-pr8j",
-      "projectPath": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj",
+      "projectPath": "C:\\Users\\bartl\\GItHub\\Steganography-App\\backend\\DCTClass\\DCTClass.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj",
+      "filePath": "C:\\Users\\bartl\\GItHub\\Steganography-App\\backend\\DCTClass\\DCTClass.csproj",
       "libraryId": "Magick.NET-Q8-AnyCPU",
       "targetGraphs": [
         "net8.0"
@@ -29,9 +29,9 @@
       "code": "NU1902",
       "level": "Warning",
       "message": "Package 'Magick.NET-Q8-AnyCPU' 14.10.0 has a known moderate severity vulnerability, https://github.com/advisories/GHSA-p27m-hp98-6637",
-      "projectPath": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj",
+      "projectPath": "C:\\Users\\bartl\\GItHub\\Steganography-App\\backend\\DCTClass\\DCTClass.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\bartl\\steg\\backend\\DCTClass\\DCTClass.csproj",
+      "filePath": "C:\\Users\\bartl\\GItHub\\Steganography-App\\backend\\DCTClass\\DCTClass.csproj",
       "libraryId": "Magick.NET-Q8-AnyCPU",
       "targetGraphs": [
         "net8.0"

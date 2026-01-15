@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
+﻿using System.Text;
 using ImageMagick;
 
 namespace DCTClass;
@@ -156,6 +153,18 @@ public class ClassDCT
 
     public static byte[] Encrypt(Stream inputStream, string message)
     {
+        try
+        {
+            inputStream.Position = 0;
+            using var testImage = new MagickImage(inputStream);
+            {
+                
+            }
+        }
+        catch (Exception e)
+        {
+            throw;
+        }
 
         inputStream.Position = 0;
         using var image = new MagickImage(inputStream);
@@ -205,7 +214,6 @@ public class ClassDCT
 
     public static string Decrypt(Stream inputStream)
     {
-        inputStream.Position = 0;
         using var image = new MagickImage(inputStream);
 
         int width = (int)image.Width - ((int)image.Width % 8);

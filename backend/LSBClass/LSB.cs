@@ -20,8 +20,6 @@ namespace LSBClass
             input_stream.Position = 0;
             using (var bmp = new MagickImage(input_stream))
             {
-                Console.WriteLine(message);
-
                 var format = bmp.Format;
                 var pixels = bmp.GetPixelsUnsafe();
                 var mapping = bmp.HasAlpha ? PixelMapping.RGBA : PixelMapping.RGB;
@@ -40,7 +38,6 @@ namespace LSBClass
                 for (int i = 0; i < 64; i++)
                 {
                     bytes[i] = SetLastBit(bytes[i], Message.Bits[i]);
-                    Console.Write(Message.Bits[i] ? "1" : "0");
                 }
                 long jump = CalculateJump(bmp.Width * bmp.Height, Message.Bits.Count - 64);
 
@@ -50,7 +47,6 @@ namespace LSBClass
                     if (byteIndex < bytes.Length)
                     {
                         bytes[(int)byteIndex] = SetLastBit(bytes[byteIndex], Message.Bits[i + 64]);
-                        Console.Write(Message.Bits[i + 64] ? "1" : "0");
                     }
                     else
                     {
@@ -69,9 +65,9 @@ namespace LSBClass
 
         public static BitArray DecryptPNGImage(Stream input_stream)
         {
-            
+
             List<bool> bits_list = new List<bool>();
-            input_stream.Position = 0;
+
             using (var bmp = new MagickImage(input_stream))
             {
                 var pixels = bmp.GetPixelsUnsafe();
@@ -153,4 +149,3 @@ namespace LSBClass
         }
     }
 }
-

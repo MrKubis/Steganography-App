@@ -1,0 +1,16 @@
+services:
+    backend:
+        container_name: steg-back
+        build: ./backend
+        ports:
+            - "5149:5149"
+        env_file:
+            - ./.env
+
+    frontend:
+        container_name: steg-front
+        build: ./frontend
+        ports:
+            - "8080:8080"
+        depends_on:
+            - backend

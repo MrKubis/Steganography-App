@@ -2,6 +2,7 @@ using ImageMagick;
 using LSBClass;
 using DCTClass;
 using Microsoft.AspNetCore.Mvc;
+using Stenography.API;
 
 namespace App.API.Controllers;
 
@@ -9,6 +10,12 @@ namespace App.API.Controllers;
 [Route("api")]
 public class EncryptController : ControllerBase
 {
+    private readonly CryptoService _cryptoService;
+    public EncryptController(CryptoService cryptoService)
+    {
+        _cryptoService = cryptoService;
+        
+    }
     [HttpPost("encrypt")]
     public async Task<IActionResult> Encrypt(IFormFile file, [FromForm] string message)
     {
@@ -32,6 +39,7 @@ public class EncryptController : ControllerBase
 
         try
         {
+            var crypto = _cryptoService.Encrypt(message);
             using var stream = file.OpenReadStream();
             using (var image = new MagickImage(stream))
             {
@@ -46,12 +54,12 @@ public class EncryptController : ControllerBase
             if (fileExtension == ".jpg" || fileExtension == ".jpeg")
             {
                 Console.WriteLine("DCT");
-                result = ClassDCT.Encrypt(stream,message);
+                result = ClassDCT.Encrypt(stream,crypto);
             }
             else
             {
                 Console.WriteLine("LSB");
-                result = LSB.EncryptPNGImage(stream, message);
+                result = LSB.EncryptPNGImage(stream, crypto);
             }
             Console.WriteLine();
             Console.WriteLine("File size: " + result.Length);

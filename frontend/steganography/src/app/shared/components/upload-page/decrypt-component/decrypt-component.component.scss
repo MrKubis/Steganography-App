@@ -1,7 +1,7 @@
 .decrypt-container {
     height: 100%;
     position: relative;
-
+    
     .go-back-container {
         position: absolute;
         top: 1rem;
@@ -10,6 +10,21 @@
         .go-back-icon {
             filter: brightness(0) saturate(100%) invert(99%) sepia(100%) saturate(0%) hue-rotate(26deg) brightness(104%) contrast(101%);
             cursor: pointer;
+        }
+    }
+    
+    .message-container {
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+
+        button {
+            margin-top: auto;
         }
     }
 }

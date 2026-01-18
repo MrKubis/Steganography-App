@@ -6,8 +6,14 @@
             </a>
         </span>
     </div>
-    @if (!isUploading) {
+    @if (!isUploading && !decryptedMessage()) {
         <app-uploader [isMessageRequired]="false" (upload)="handleFileUpload($event)"></app-uploader>
+    } @else if (decryptedMessage()) {
+        <div class="message-container">
+            <h2>DECRYPTED MESSAGE:</h2>
+            <h3>{{ decryptedMessage() }}</h3>
+            <button (click)="clearDecryptedMessage()">Upload another file</button>
+        </div>
     } @else {
         <div class="loader-container">
             <div class="loader"></div>

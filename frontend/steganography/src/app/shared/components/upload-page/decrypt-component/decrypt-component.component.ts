@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { UploadStrategyComponent } from '../strategies/upload-strategy.model';
 import { UploaderComponent } from '../uploader/uploader.component';
 import { UploadService } from '../../../services/upload.service';
@@ -12,6 +12,7 @@ import { RouterLink } from '@angular/router';
 })
 export class DecryptComponentComponent implements UploadStrategyComponent {
   isUploading: boolean = false;
+  decryptedMessage = signal<string | null>(null);
 
   constructor(private _uploadService: UploadService) {}
 
@@ -22,7 +23,7 @@ export class DecryptComponentComponent implements UploadStrategyComponent {
 
     this._uploadService.decrypt(data.file).subscribe({
       next: response => {
-        console.log(response);
+        this.decryptedMessage.set(response ?? null);
       },
       error: () => {
         this.isUploading = false;
@@ -33,5 +34,9 @@ export class DecryptComponentComponent implements UploadStrategyComponent {
     });
 
     return;
+  }
+
+  clearDecryptedMessage(): void {
+    this.decryptedMessage.set(null);
   }
 }

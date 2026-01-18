@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { UploadStrategyComponent } from '../strategies/upload-strategy.model';
 import { UploaderComponent } from "../uploader/uploader.component";
 import { UploadService } from '../../../services/upload.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-encrypt-component',
-  imports: [UploaderComponent],
+  imports: [UploaderComponent, RouterLink],
   templateUrl: './encrypt-component.component.html',
   styleUrl: './encrypt-component.component.scss'
 })

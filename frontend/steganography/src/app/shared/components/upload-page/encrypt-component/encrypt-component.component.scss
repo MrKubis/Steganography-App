@@ -1,3 +1,15 @@
 .encrypt-container {
     height: 100%;
+    position: relative;
+
+    .go-back-container {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        
+        .go-back-icon {
+            filter: brightness(0) saturate(100%) invert(99%) sepia(100%) saturate(0%) hue-rotate(26deg) brightness(104%) contrast(101%);
+            cursor: pointer;
+        }
+    }
 }

@@ -1,4 +1,11 @@
 <div class="encrypt-container">
+    <div class="go-back-container">
+        <span>
+            <a routerLink="/">
+                <img src="/icons/arrow-left.svg" alt="Go Back" class="icon go-back-icon">
+            </a>
+        </span>
+    </div>
     @if (!isUploading) {
         <app-uploader (upload)="handleFileUpload($event)"></app-uploader>
     } @else {

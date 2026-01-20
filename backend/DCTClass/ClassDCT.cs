@@ -159,7 +159,7 @@ public class ClassDCT
 
         inputStream.Position = 0;
         using var image = new MagickImage(inputStream);
-        image.Format = MagickFormat.Jng;
+        image.Format = MagickFormat.Jpg;
         message += Terminator;
         List<int> bits = StringToBits(message);
         int bitIndex = 0;
@@ -258,4 +258,5 @@ public class ClassDCT
         return Encoding.UTF8.GetString(collectedBytes.ToArray());
     }
 }
+
 

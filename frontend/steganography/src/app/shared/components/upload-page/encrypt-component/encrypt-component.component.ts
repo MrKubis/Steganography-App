@@ -25,7 +25,8 @@ export class EncryptComponentComponent implements UploadStrategyComponent {
         const url = window.URL.createObjectURL(response);
         const a = document.createElement('a');
         a.href = url;
-        a.download = `encrypted-${new Date().toISOString().replace(/:/g, '-')}.png`;
+        const extension = response.type.split('/')[1] || 'bin';
+        a.download = `encrypted-${new Date().toISOString().replace(/:/g, '-')}.${extension}`;
         a.click();
       },
       error: () => {
